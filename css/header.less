@@ -1,0 +1,52 @@
+/*
+ *header
+ */
+
+.header{
+
+	min-width: 100%;
+	height: 9rem;
+
+	padding: 1.5rem 0;
+	box-sizing: border-box;
+	overflow: hidden;
+	
+	position: fixed;
+	z-index: 2;
+	
+	background-color: @color_theme_3;
+	.m_transition(padding, .4s, ease-out, 0s);
+	
+	&:after{
+		.m_clear();
+	}
+	
+	&:after{
+
+		content: "";
+		display: inline-block;
+		background-color: #fad027;
+		
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		
+		width: 100%;
+		height: .5rem;
+
+		.m_translate(0, 0);
+		.m_transition(transform, .8s, ease-out, .4s);
+	}
+}
+
+.logo{
+	float: left;
+	.font_s30_w400();
+	color: @color_theme_2;
+}
+
+.logo__item{
+	.font_s16_w400();
+	color: @color_theme;
+	display: block;
+}

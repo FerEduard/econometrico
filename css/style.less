@@ -1,0 +1,248 @@
+/*
+author: Developed by Stas Melnikov. http://stas-melnikov.ru
+e-mail: melnik909@ya.ru
+linkedIn: https://www.linkedin.com/in/melnik909
+github: https://github.com/melnik909
+facebook: https://www.facebook.com/melnik909
+Template created with use of a Responsive Framework http://stas-melnikov.ru/responsive_elements/
+*/
+
+@import 'helpers.less';
+
+*{
+	margin: 0;
+	padding: 0; 
+	border: none;
+}
+
+/*
+ *fonts helpers
+ */
+
+.font_s35_w400(){
+	font-size: 3.5rem;
+	font-weight: 400;
+}
+
+.font_s30_w400(){
+	font-size: 3rem;
+	font-weight: 400;
+}
+
+.font_s25_w400(){
+	font-size: 2.5rem;
+	font-weight: 400;
+}
+
+.font_s18_w400(){
+	font-size: 1.8rem;
+	font-weight: 400;
+}
+
+.font_s16_w400(){	
+	font-size: 1.6rem;
+	font-weight: 400;
+}
+
+.font_s14_w400(){	
+	font-size: 1.4rem;
+	font-weight: 400;
+}
+
+/*
+ *fonts
+ */
+
+ 
+@icon_size: 1.8rem;
+ 
+.icon{
+
+	display: inline-block;
+	vertical-align: middle;
+	
+	&:before{
+		
+		content: "";
+		display: block;
+		background: no-repeat 50% 50%;
+	    background-size: cover;
+		
+		width: @icon_size;
+		height: @icon_size;	
+	}
+}
+.icon-tag:before{
+	background-image: url("../icons/tags.svg");
+}
+
+.icon-user:before{
+	background-image: url("../icons/user.svg");
+}
+
+/*
+ *style template
+ */
+
+@color_theme: #0091be;
+@color_theme_2: #000;
+@color_theme_3: #fff;
+@color_theme_4: #eee;
+@color_theme_5: #fefefe;
+@padding_container: 5rem;
+
+html{
+	font-size: 10px;
+}
+
+@media screen and (max-width: 980px){
+	html{
+		font-size: 8px;
+	}
+}
+
+@media screen and (max-width: 640px){
+	html{
+		font-size: 6.5px;
+	}
+}
+
+body{
+	font-family: 'Roboto', sans-serif;
+	.font_s16_w400();
+}
+
+a{
+	color: @color_theme;
+	text-decoration: none;
+	.m_transition(color, .8s, ease-out, 0s);
+	
+	&:hover{
+		color: @color_theme_2;
+	}
+}
+
+p{
+	margin-bottom: 2rem;
+	line-height: 3.5rem;
+	
+	&:last-of-type{
+		margin-bottom: 0
+	}
+}
+
+.responsive-img{
+	max-width: 100%;
+	height: auto;
+}
+
+
+@import 'grid.less';
+@import 'titles.less';
+@import 'header.less';
+@import 'navigation.less';
+@import 'fullwidth-banner.less';
+@import 'about.less';
+@import 'skills.less';
+@import 'projects.less';
+@import 'blog.less';
+@import 'contacts.less';
+@import 'footer.less';
+ 
+/*
+ *preloader
+ */
+
+@mpc_preloader9_size: 15px;
+@mpc_preloader9_color1: #6cc88a;
+@mpc_preloader9_color2: #4fc3f7;
+@mpc_preloader9_time: 1.8s;
+ 
+.preloader_active{
+	
+	&:after{
+		
+		content: "";
+		display: block;
+		background-color: @color_theme;
+		
+		width: 100%;
+		height: 100%;
+		
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 998;
+	}
+	
+	.mpc_preloader{
+		.m_absolute_middle();
+		position: fixed;
+		left: 50%;
+		z-index: 999;
+		.m_translate(-50%, -50%);
+	}
+	
+	.mpc_preloader9{
+		
+		&:before, &:after{
+			content: "";
+			display: block;
+			.m_circle(@mpc_preloader9_size, @mpc_preloader9_size);
+			position: absolute;
+		}
+
+		&:before{
+			
+			background-color: @mpc_preloader9_color1;
+			.m_translate(-50%, 0%);
+			
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+			
+			-webkit-animation: mpc_preloader_left_round @mpc_preloader9_time infinite ease-in-out;
+			animation: mpc_preloader_left_round @mpc_preloader9_time infinite ease-in-out;
+		}
+
+		&:after{ 
+
+			background-color: @mpc_preloader9_color2;
+			.m_translate(150%, 0%);
+			
+			-webkit-animation-fill-mode: both; 
+			animation-fill-mode: both;
+			
+			-webkit-animation: mpc_preloader_right_round @mpc_preloader9_time infinite ease-in-out;
+			animation: mpc_preloader_right_round @mpc_preloader9_time infinite ease-in-out;
+		}
+	}
+}
+
+.ma_mpc_preloader9(@value1, @value2, @value3, @value4){
+	
+	50%{
+		.m_translate(@value1, @value2);
+	}
+
+	100%{
+		.m_translate(@value3, @value4);
+	}
+}
+
+@-webkit-keyframes mpc_preloader_left_round{
+	.ma_mpc_preloader9(150%, 0%, -50%, 0%)
+}
+
+@keyframes mpc_preloader_left_round{
+	.ma_mpc_preloader9(150%, 0%, -50%, 0%)
+}
+
+@-webkit-keyframes mpc_preloader_right_round{
+	.ma_mpc_preloader9(-50%, 0%, 150%, 0%) 
+}
+
+@keyframes mpc_preloader_right_round{
+	.ma_mpc_preloader9(-50%, 0%, 150%, 0%)
+}

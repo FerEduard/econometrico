@@ -1,0 +1,32 @@
+/*
+ *grid
+ */
+
+.wrapper{
+	border-bottom: 1px solid @color_theme_4;
+	box-shadow: 0 -0.5rem 2rem @color_theme_4 inset;
+}
+
+.wrapper_decor{
+	background-color: @color_theme;
+	box-shadow: none;
+}
+
+.container{
+	
+	min-width: 100px;
+	max-width: 1200px;
+	
+	position: relative;
+	padding: 0 1rem;
+	margin: 0 auto;
+	
+	&:after{
+		.m_clear();
+	}
+}
+
+.content{
+	padding-top: @padding_container;
+	padding-bottom: @padding_container;
+}

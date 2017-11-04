@@ -1,0 +1,47 @@
+/*
+ *footer
+ */
+ 
+.footer{
+
+	min-width: 100px;
+	padding: 3rem 1.5rem;
+	
+	background-color: #3c3838;
+	font-size: 1.5rem;
+	color: @color_theme_5;
+	
+	&:after{
+		.m_clear();
+	}
+}
+
+.footer__right-column{
+	float: right;
+	text-align: right;
+}
+
+.footer__left-column{
+	float: left;
+}
+
+.footer__link{
+	
+	color: @color_theme_3;
+	
+	&:hover{
+		color: @color_theme_5;
+	}
+}
+	
+.copyright{
+	margin-left: 2.5rem;
+}
+
+@media screen and (max-width: 640px){ 
+
+	.copyright, .author{
+		float: left;
+		margin-left: 1rem;
+	}
+}

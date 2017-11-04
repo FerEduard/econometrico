@@ -1,0 +1,62 @@
+/*
+ *helpers
+ */
+
+.m_transition(@property, @time, @effect, @delay){
+	-webkit-transition: @property @time @effect @delay;
+	transition: @property @time @effect @delay;
+}
+
+.m_complex_transition(@property, @property2, @time,  @effect, @delay){
+
+	-webkit-transition-property: @property, @property2;	
+	transition-property: @property, @property2;
+	
+	-webkit-transition-duration: @time;
+	transition-duration: @time;
+	
+	 -webkit-transition-timing-function: @effect;
+	transition-timing-function: @effect;
+	
+	 -webkit-transition-delay: @delay;
+	transition-delay: @delay;
+}
+
+.m_translate(@x, @y){
+	-webkit-transform: translateZ(0) translate(@x, @y);
+	transform: translateZ(0) translate(@x, @y);
+}
+
+.m_transform_rotate(@value){
+    -webkit-transform: rotate(@value);
+    transform: rotate(@value);
+}
+
+.m_clear(){
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.m_circle(@width, @height){
+	width: @width;
+	height: @height;
+	border-radius: 50%;
+}
+
+.m_absolute_middle(){
+	position: absolute;
+	top: 50%;
+	.m_translate(0, -50%);
+}
+
+.flexbox(){
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.flexwrap(@value){
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+}

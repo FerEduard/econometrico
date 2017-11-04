@@ -1,0 +1,53 @@
+/*
+ *contacts
+ */
+
+.contacts{
+	position: relative;
+	min-width: 100%;
+}
+	
+.contacts__info{
+	
+	width: 36rem;
+	padding: 2.5rem 3.5rem;
+	background-color: rgba(255,255,255, .8);
+	
+	position: absolute;
+	left: 10%;
+	top: 11rem;
+	z-index: 2;
+}
+
+.contacts__title{
+	margin-bottom: 1.5rem;
+}
+
+.contacts__map{
+	height: 45rem;
+	width: 100%;
+}
+
+.gm-style-iw *{
+	display: block;
+	width: 100%;
+}
+.gm-style-iw h4, .gm-style-iw p{
+	margin: 0;
+	padding: 0;
+}
+.gm-style-iw a{
+	color: #4272db;
+}
+
+@media screen and (max-width: 640px){ 
+		
+	.contacts__info{
+		display: none;
+	}
+	
+	.contacts__map{
+		height: 25rem;
+		width: 100%;
+	}
+}
